@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>粉色美乐蒂长单页网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #FFE6EF;
+            overflow-x: hidden;
+        }
+
+        /* 页面头部标题栏（静态展示，无点击按钮） */
+        header {
+            width: 100%;
+            background-color: #FFC8D8;
+            padding: 16px 30px;
+            border-bottom: 3px solid #FFB6C8;
+        }
+        .header-title {
+            font-size: 34px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* 统一板块间距 */
+        .section-wrap {
+            width: 100%;
+            padding: 60px 40px;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        /* 全局底部装饰小狗（固定悬浮底部） */
+        .bg-bottom-puppy {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 400px;
+            background-image: url("bg-dog-bottom.png");
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: 78%;
+            z-index: -1;
+        }
+
+        /* 首页区域 */
+        .home-area {
+            display: flex;
+            justify-content: center;
+        }
+        .home-card {
+            width: 72%;
+            background: #fff;
+            border: 3px solid #FFB6C8;
+            border-radius: 999px;
+            padding: 70px 20px;
+            text-align: center;
+        }
+        .home-card h1 {
+            font-size: 92px;
+            color: #FFC8D8;
+            text-shadow: 2px 2px 3px #ffb0c5;
+            line-height: 1.3;
+        }
+
+        /* 个人信息区域 */
+        .info-area {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+        .info-text-box {
+            width: 40%;
+            background: #fff;
+            border-radius: 24px;
+            padding: 36px 30px;
+            box-shadow: 0 4px 12px #ffd0e0;
+        }
+        .info-text-box p {
+            font-size: 28px;
+            color: #553333;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        .avatar-container {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: #FFD9E6;
+            padding: 12px;
+        }
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* 学科板块通用布局 */
+        .subject-area {
+            width: 100%;
+            height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 55px;
+        }
+        .subject-img-box {
+            width: 280px;
+            height: 280px;
+            background: #FFE6EF;
+            border: 3px solid #FFC8D8;
+            border-radius: 20px;
+            padding: 14px;
+        }
+        .subject-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .subject-text-box {
+            width: 53%;
+            background: #fff;
+            border-radius: 20px;
+            padding: 28px;
+        }
+        .subject-text-box h2 {
+            font-size: 48px;
+            color: #663333;
+            margin-bottom: 18px;
+        }
+        .subject-text-box p {
+            font-size: 20px;
+            line-height: 1.7;
+            color: #442222;
+        }
+
+        /* 联系方式区域 */
+        .contact-area {
+            padding-left: 110px;
+            padding-top: 20px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 38px 0;
+            gap: 22px;
+        }
+        .contact-label {
+            width: 135px;
+            height: 95px;
+            background: #FFC8D8;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #663333;
+            position: relative;
+        }
+        .contact-label::before {
+            content: "";
+            position: absolute;
+            top: -28px;
+            left: 20px;
+            width: 56px;
+            height: 56px;
+            background: #FFC8D8;
+            border-radius: 50% 50% 0 50%;
+        }
+        .contact-desc {
+            flex: 1;
+            background: #FFD9E6;
+            border-radius: 999px;
+            padding: 22px 32px;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: #442222;
+        }
+        .contact-icon {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部静态标题栏，无切换按钮 -->
+    <header>
+        <div class="header-title">个人网站</div>
+    </header>
+
+    <!-- 1. 首页板块 -->
+    <div class="section-wrap">
+        <div class="home-area">
+            <div class="home-card">
+                <h1>欢迎来到<br>我的个人页面</h1>
+            </div>
+        </div>
+        <div class="bg-bottom-puppy"></div>
+    </div>
+
+    <!-- 2. 个人信息板块 -->
+    <div class="section-wrap">
+        <div class="info-area">
+            <div class="info-text-box">
+                <p>姓名：李许诺</p>
+                <p>性别：女</p>
+                <p>民族：汉族</p>
+                <p>生日：2007.2.12</p>
+                <p>学号：2025380820</p>
+                <p>专业：计算机应用技术</p>
+                <p>特长：美术</p>
+                <p>名言：“正确的事反复做，<br>错误的事不再做”</p>
+            </div>
+            <div class="avatar-container">
+                <img src="avatar-girl.png" alt="个人头像">
+            </div>
+        </div>
+        <div class="bg-bottom-puppy"></div>
+    </div>
+
+    <!-- 3. UI设计板块 -->
+    <div class="section-wrap">
+        <div class="subject-area">
+            <div class="subject-img-box">
+                <img src="melody-ui.png" alt="UI美乐蒂">
+            </div>
+            <div class="subject-text-box">
+                <h2>UI设计</h2>
+                <p>本课程学习移动端界面布局、按钮组件与页面排版规范。练习色彩搭配、卡片排版与交互视觉设计，熟练使用设计工具制作网页与手机界面，掌握栅格布局方法，独立完成个人网页UI全套视觉方案，锻炼界面审美与排版能力。</p>
+            </div>
+        </div>
+        <div class="bg-bottom-puppy"></div>
+    </div>
+
+    <!-- 4. Unity3D板块 -->
+    <div class="section-wrap">
+        <div class="subject-area">
+            <div class="subject-img-box">
+                <img src="melody-unity.png" alt="Unity美乐蒂">
+            </div>
+            <div class="subject-text-box">
+                <h2>Unity 3D</h2>
+                <p>课程学习Unity引擎基础操作，掌握场景搭建、模型导入、物体移动与碰撞设置。配合脚本实现基础交互效果，练习制作简易小游戏原型。熟悉资源管理与项目打包流程，提升游戏场景搭建与逻辑开发的实践能力。</p>
+            </div>
+        </div>
+        <div class="bg-bottom-puppy"></div>
+    </div>
+
+    <!-- 5. Java板块 -->
+    <div class="section-wrap">
+        <div class="subject-area">
+            <div class="subject-img-box">
+                <img src="melody-java.png" alt="Java美乐蒂">
+            </div>
+            <div class="subject-text-box">
+                <h2>Java</h2>
+                <p>本课程学习Java基础语法与面向对象编程思想，掌握变量、循环、类与方法等核心内容。练习编写简易程序，熟悉代码调试流程，培养严谨的编程逻辑。课程为后续网页与软件开发打下基础，能够独立完成小型程序项目实训。</p>
+            </div>
+        </div>
+        <div class="bg-bottom-puppy"></div>
+    </div>
+
+    <!-- 6. 英语板块 -->
+    <div class="section-wrap">
+        <div class="subject-area">
+            <div class="subject-img-box">
+                <img src="melody-english.png" alt="英语美乐蒂">
+            </div>
+            <div class="subject-text-box">
+                <h2>English</h2>
+                <p>本课程巩固词汇与语法，重点训练听力、阅读与书面写作。围绕日常交流、短文写作展开练习，提升阅读理解能力。同时积累专业英文词汇，为查阅外文资料做好准备，全面提升综合语言应用水平。</p>
+            </div>
+        </div>
+        <div class="bg-bottom-puppy"></div>
+    </div>
+
+    <!-- 7. 毛概板块 -->
+    <div class="section-wrap">
+        <div class="subject-area">
+            <div class="subject-img-box">
+                <img src="melody-mao.png" alt="毛概美乐蒂">
+            </div>
+            <div class="subject-text-box">
+                <h2>毛泽东思想和中国特色社会主义理论体系概括</h2>
+                <p>本课程系统学习马克思主义中国化理论成果，了解国家发展历程与方针政策。结合案例开展学习，树立正确价值观。课程兼顾理论学习与社会实践，引导我们认清时代使命，提升思想素养与政治认知。</p>
+            </div>
+        </div>
+        <div class="bg-bottom-puppy"></div>
+    </div>
+
+    <!-- 8. 3DMAX板块 -->
+    <div class="section-wrap">
+        <div class="subject-area">
+            <div class="subject-img-box">
+                <img src="melody-3dmax.png" alt="3DMAX美乐蒂">
+            </div>
+            <div class="subject-text-box">
+                <h2>3D MAX</h2>
+                <p>课程学习多边形建模、线条绘制、材质贴图与基础渲染。从简单几何体做起，逐步完成家具、场景模型制作。掌握模型优化方法，输出高质量效果图，锻炼空间造型能力，完成三维模型课程实训项目。</p>
+            </div>
+        </div>
+        <div class="bg-bottom-puppy"></div>
+    </div>
+
+    <!-- 9. 联系方式板块 -->
+    <div class="section-wrap">
+        <div class="contact-area">
+            <div class="contact-item">
+                <div class="contact-label">手机</div>
+                <div class="contact-desc">
+                    <span class="contact-icon">📞</span>
+                    15837558196
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-label">邮箱</div>
+                <div class="contact-desc">
+                    <span class="contact-icon">✉️</span>
+                    1973265660@qq.com
+                </div>
+            </div>
+        </div>
+        <div class="bg-bottom-puppy"></div>
+    </div>
+</body>
+</html>
